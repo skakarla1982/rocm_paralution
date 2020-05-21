@@ -84,17 +84,20 @@ endforeach()
 
 #######################################################################################################################
 
-# Replace CUDA files in PARALUTION list since it is compiled by NVCC
-if (SUPPORT_CUDA)
+set(path1 /rocm_final_paralution/rocm_paralution/src)
+
+# Replace HIP files in PARALUTION list since it is compiled by NVCC
+if (SUPPORT_HIP)
   foreach(i ${PARALUTION_SOURCES})
 
     if (${i} MATCHES ".cu")
-      CUDA_COMPILE(cu ${i})
-      list(REMOVE_ITEM PARALUTION_SOURCES ${i})
-      list(APPEND PARALUTION_SOURCES ${cu})
+    execute_process(COMMAND /opt/rocm/bin/hipcc -c -fPIC -fno-gpu-rdc -DSUPPORT_HIP  ${path1}/${i} -o  ${path1}/${i}.o )
+    list(REMOVE_ITEM PARALUTION_SOURCES ${path1}/${i})
+    list(APPEND PARALUTION_SOURCES ${path1}/${i}.o)
+
     endif()
-    
-  endforeach()
+    endforeach()
+
 endif()
 
 # Create paralution library
@@ -106,12 +109,13 @@ if (SUPPORT_MIC)
 endif()
 
 add_library(${PARALUTION_LIBRARY} ${LIBRARY_TYPE} ${PARALUTION_SOURCES})
+SET(HIP_LIBRARIES "-L/opt/rocm/lib -lhip_hcc -lhipblas -lhipsparse") 
 
 #######################################################################################################################
 
 # Link platform specific libraries
-if (SUPPORT_CUDA)
-  target_link_libraries(${PARALUTION_LIBRARY} ${CUDA_LIBRARIES} ${CUDA_cusparse_LIBRARY} ${CUDA_CUBLAS_LIBRARIES})
+if (SUPPORT_HIP)
+	target_link_libraries(${PARALUTION_LIBRARY} ${HIP_LIBRARIES} )
 endif()
 
 if (SUPPORT_OCL)

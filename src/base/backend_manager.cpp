@@ -61,7 +61,7 @@
 #include <mkl_spblas.h>
 #endif
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
 #include "gpu/backend_gpu.hpp"
 #endif
 
@@ -78,7 +78,7 @@ namespace paralution {
 // Global backend descriptor and default values
 Paralution_Backend_Descriptor _Backend_Descriptor = {
   false, // Init
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   GPU,   // default backend
 #else
   #ifdef SUPPORT_OCL
@@ -132,7 +132,7 @@ const std::string _paralution_host_name [1] =
 /// Backend names
 const std::string _paralution_backend_name [4] =
   {"None",
-   "GPU(CUDA)",
+   "GPU(HIP)",
    "OpenCL",
    "MIC(OpenMP)"};
 
@@ -153,7 +153,7 @@ int init_paralution(void) {
     LOG_INFO("By downloading this package you fully agree with the GPL license.");
   }
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   _get_backend_descriptor()->backend = GPU;
 #else
   #ifdef SUPPORT_OCL
@@ -182,7 +182,7 @@ int init_paralution(void) {
 
   if (_get_backend_descriptor()->disable_accelerator == false) {
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
     _get_backend_descriptor()->accelerator = paralution_init_gpu();
 #endif
     
@@ -232,7 +232,7 @@ int stop_paralution(void) {
 
   _paralution_delete_all_obj();
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   paralution_stop_gpu();
 #endif
 
@@ -271,7 +271,7 @@ int set_device_paralution(int dev) {
 
   assert(_get_backend_descriptor()->init == false);
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   set_gpu_cuda_paralution(dev);
 #endif
 
@@ -450,13 +450,13 @@ void info_paralution(const struct Paralution_Backend_Descriptor backend_descript
     LOG_INFO("The accelerator is disabled");
   }
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   if (backend_descriptor.accelerator)
     paralution_info_gpu(backend_descriptor);
   else
     LOG_INFO("GPU is not initialized");
 #else
-  LOG_VERBOSE_INFO(3, "No CUDA/GPU support");
+  LOG_VERBOSE_INFO(3, "No HIP/GPU support");
 #endif
 
 #ifdef SUPPORT_OCL
@@ -530,7 +530,7 @@ AcceleratorVector<ValueType>* _paralution_init_base_backend_vector(const struct 
 
   switch (backend_descriptor.backend) {
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
   // GPU
   case GPU:
     return _paralution_init_base_gpu_vector<ValueType>(backend_descriptor);
@@ -577,7 +577,7 @@ AcceleratorMatrix<ValueType>* _paralution_init_base_backend_matrix(const struct 
 
   switch (backend_descriptor.backend) {
 
-#ifdef SUPPORT_CUDA      
+#ifdef SUPPORT_HIP      
   case GPU:
     return _paralution_init_base_gpu_matrix<ValueType>(backend_descriptor, matrix_format);
     break;
@@ -665,7 +665,7 @@ void _paralution_sync(void) {
 
   if (_paralution_available_accelerator() == true) {
 
-#ifdef SUPPORT_CUDA
+#ifdef SUPPORT_HIP
     paralution_gpu_sync();
 #endif
     

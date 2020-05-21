@@ -69,7 +69,7 @@ foreach(i ${HOST_PUBLIC_HEADERS})
   list(APPEND BASE_PUBLIC_HEADERS host/${i})
 endforeach()
 
-if (SUPPORT_CUDA)
+if (SUPPORT_HIP)
   include(base/gpu/CMakeLists.txt)
   foreach(i ${GPU_SOURCES})
     list(APPEND BASE_SOURCES gpu/${i})

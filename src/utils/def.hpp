@@ -80,7 +80,7 @@
 
 #endif
 
-#if defined(SUPPORT_CUDA) || defined(SUPPORT_OCL) || defined(SUPPORT_MIC)
+#if defined(SUPPORT_HIP) || defined(SUPPORT_OCL) || defined(SUPPORT_MIC)
 
 #undef SUPPORT_COMPLEX
 

@@ -1,0 +1,663 @@
+-- Could NOT find OpenCL (missing: OPENCL_LIBRARIES OPENCL_INCLUDE_DIRS) 
+-- OpenCL not found. Compiling WITHOUT OpenCL support.
+-- MIC not supported while HIP is enabled.
+-- Could NOT find MKL (missing: MKL_INCLUDE_DIRS MKL_LIBRARIES) 
+-- MKL not found. Compiling WITHOUT MKL support.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/backend_gpu.cu:43:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/backend_gpu.cu:43:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:55:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:49:10: error: use of undeclared identifier 'cusparseDcsrgeam'; did you mean '__cusparseXcsrgeam__'?
+  return cusparseDcsrgeam(handle, 
+         ^~~~~~~~~~~~~~~~
+         __cusparseXcsrgeam__
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:39:19: note: '__cusparseXcsrgeam__' declared here
+hipsparseStatus_t __cusparseXcsrgeam__(hipsparseHandle_t handle, int m, int n,
+                  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:70:10: error: use of undeclared identifier 'cusparseScsrgeam'; did you mean '__cusparseXcsrgeam__'?
+  return cusparseScsrgeam(handle, 
+         ^~~~~~~~~~~~~~~~
+         __cusparseXcsrgeam__
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:61:19: note: '__cusparseXcsrgeam__' declared here
+hipsparseStatus_t __cusparseXcsrgeam__(hipsparseHandle_t handle, int m, int n,
+                  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:82:3: error: cannot initialize object parameter of type 'paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->set_backend(local_backend);
+  ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::GPUAcceleratorMatrixCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:87:9: error: no member named 'L_mat_info_' in 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->L_mat_info_ = 0;
+  ~~~~  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:88:9: error: no member named 'U_mat_info_' in 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->U_mat_info_ = 0;
+  ~~~~  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:218:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0) {
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::Clear' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:238:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::Zeros' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:139:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::AllocateCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:194:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_nrow() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::LeaveDataPtrCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:195:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_ncol() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:196:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_nnz() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:785:20: error: no viable conversion from 'const GPUAcceleratorMatrixCSR<float>' to 'const BaseMatrix<float>'
+    this->CopyFrom(*cast_mat_csr);
+                   ^~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::ConvertFrom' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/../host/../base_matrix.hpp:125:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const GPUAcceleratorMatrixCSR<float>' to 'const paralution::BaseMatrix<float> &' for 1st argument
+class BaseMatrix {
+      ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:69:54: note: passing argument to parameter 'mat' here
+  virtual void CopyFrom(const BaseMatrix<ValueType> &mat);
+                                                     ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:467:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() == 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::CopyFrom' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:471:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_nnz()  == src.get_nnz());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:472:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_nrow() == src.get_nrow());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:473:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_ncol() == src.get_ncol());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:476:9: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+    if (this->get_nnz() > 0) {
+        ^~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:55:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:49:10: error: use of undeclared identifier 'cusparseDcsrgeam'; did you mean '__cusparseXcsrgeam__'?
+  return cusparseDcsrgeam(handle, 
+         ^~~~~~~~~~~~~~~~
+         __cusparseXcsrgeam__
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:39:19: note: '__cusparseXcsrgeam__' declared here
+hipsparseStatus_t __cusparseXcsrgeam__(hipsparseHandle_t handle, int m, int n,
+                  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:70:10: error: use of undeclared identifier 'cusparseScsrgeam'; did you mean '__cusparseXcsrgeam__'?
+  return cusparseScsrgeam(handle, 
+         ^~~~~~~~~~~~~~~~
+         __cusparseXcsrgeam__
+/rocm_final_paralution/rocm_paralution/src/base/gpu/cusparse_csr.hpp:61:19: note: '__cusparseXcsrgeam__' declared here
+hipsparseStatus_t __cusparseXcsrgeam__(hipsparseHandle_t handle, int m, int n,
+                  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:82:3: error: cannot initialize object parameter of type 'paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->set_backend(local_backend);
+  ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::GPUAcceleratorMatrixCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:87:9: error: no member named 'L_mat_info_' in 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->L_mat_info_ = 0;
+  ~~~~  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:88:9: error: no member named 'U_mat_info_' in 'paralution::GPUAcceleratorMatrixCSR<float>'
+  this->U_mat_info_ = 0;
+  ~~~~  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:218:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0) {
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::Clear' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:238:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::Zeros' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:139:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() > 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::AllocateCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:194:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_nrow() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::LeaveDataPtrCSR' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:195:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_ncol() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:196:10: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  assert(this->get_nnz() > 0);
+         ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:785:20: error: no viable conversion from 'const GPUAcceleratorMatrixCSR<float>' to 'const BaseMatrix<float>'
+    this->CopyFrom(*cast_mat_csr);
+                   ^~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::ConvertFrom' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/../host/../base_matrix.hpp:125:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const GPUAcceleratorMatrixCSR<float>' to 'const paralution::BaseMatrix<float> &' for 1st argument
+class BaseMatrix {
+      ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:69:54: note: passing argument to parameter 'mat' here
+  virtual void CopyFrom(const BaseMatrix<ValueType> &mat);
+                                                     ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:467:7: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+  if (this->get_nnz() == 0)
+      ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:3650:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixCSR<float>::CopyFrom' requested here
+template class GPUAcceleratorMatrixCSR<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:471:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_nnz()  == src.get_nnz());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:472:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_nrow() == src.get_nrow());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:473:13: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+     assert(this->get_ncol() == src.get_ncol());
+            ^~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+     (static_cast <bool> (expr)                                         \
+                          ^~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.cu:476:9: error: cannot initialize object parameter of type 'const paralution::BaseMatrix<float>' with an expression of type 'paralution::GPUAcceleratorMatrixCSR<float>'
+    if (this->get_nnz() > 0) {
+        ^~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_coo.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_coo.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_dense.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_dense.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_mcsr.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_mcsr.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_bcsr.cu:35:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_bcsr.cu:35:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_ell.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_ell.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_dia.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_dia.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1179:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<double>::CopyTo' requested here
+template class GPUAcceleratorMatrixHYB<double>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1179:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<double>::CopyToAsync' requested here
+template class GPUAcceleratorMatrixHYB<double>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1180:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<float>::CopyTo' requested here
+template class GPUAcceleratorMatrixHYB<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1180:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<float>::CopyToAsync' requested here
+template class GPUAcceleratorMatrixHYB<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+12 warnings and 2 errors generated.
+In file included from /rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:36:
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:174:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t L_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_csr.hpp:175:3: error: unknown type name 'cusparseSolveAnalysisInfo_t'
+  cusparseSolveAnalysisInfo_t U_mat_info_;
+  ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1179:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<double>::CopyTo' requested here
+template class GPUAcceleratorMatrixHYB<double>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1179:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<double>::CopyToAsync' requested here
+template class GPUAcceleratorMatrixHYB<double>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1180:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<float>::CopyTo' requested here
+template class GPUAcceleratorMatrixHYB<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:423:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:478:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+      ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:1180:16: note: in instantiation of member function 'paralution::GPUAcceleratorMatrixHYB<float>::CopyToAsync' requested here
+template class GPUAcceleratorMatrixHYB<float>;
+               ^
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: place parentheses around the assignment to silence this warning
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+      (                                                                     )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:727:20: note: use '==' to turn this assignment into an equality comparison
+  if (gpu_cast_mat = dynamic_cast<GPUAcceleratorMatrixHYB<ValueType>*> (dst)) {
+                   ^
+                   ==
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+        ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: place parentheses around the assignment to silence this warning
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+        (                                                         )
+/rocm_final_paralution/rocm_paralution/src/base/gpu/gpu_matrix_hyb.cu:782:23: note: use '==' to turn this assignment into an equality comparison
+    if (host_cast_mat = dynamic_cast<HostMatrix<ValueType>*> (dst)) {
+                      ^
+                      ==
+12 warnings and 2 errors generated.
+-- Configuring done
+CMake Error at src/CMakeLists.txt:111 (add_library):
+  Cannot find source file:
+
+    /rocm_final_paralution/rocm_paralution/src/base/gpu/backend_gpu.cu.o
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp
+  .hxx .in .txx
+
+
+CMake Error: CMake can not determine linker language for target: paralution
+CMake Error: Cannot determine link language for target "paralution".
+-- Generating done
+-- Build files have been written to: /rocm_final_paralution/rocm_paralution/build

@@ -95,38 +95,43 @@ else()
 endif()
 
 #######################################################################################################################
-# CUDA
-find_package(CUDA)
-if (NOT CUDA_FOUND)
-  message("-- CUDA not found. Compiling WITHOUT CUDA support.")
-else()
-  option(SUPPORT_CUDA "Compile WITH CUDA support." ON)
-  if (SUPPORT_CUDA)
-    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -O3 -arch sm_20 --compiler-options -Wall")
-    set(CUDA_CXX_FLAGS -DSUPPORT_CUDA)
-  endif()
+
+# HIP
+set(CMAKE_MODULE_PATH "/opt/rocm/hip/cmake" ${CMAKE_MODULE_PATH})
+
+find_package(HIP)
+if(NOT DEFINED HIP_PATH)
+
+    if(NOT DEFINED ENV{HIP_PATH})
+        set(HIP_PATH "/opt/rocm/hip" CACHE PATH "Path to which HIP has been installed")
+        #set(HIP_FLAGS "${HIP_FLAGS} -O3 -arch amd-gpu-target=gfx906  --compiler-options -Wall")
+        set(HIP_HCC_FLAGS "${HIP_HCC_FLAGS} -O3 -arch amd-gpu-target=gfx906  -fno-gpu-rdc --compiler-options -Wall")
+        option(SUPPORT_HIP "Compile WITH HIP support." ON)
+        set(HIP_PATH $ENV{HIP_PATH} CACHE PATH "Path to which HIP has been installed")
+        set(HIP_CXX_FLAGS -DSUPPORT_HIP)
+    endif()
 endif()
 
 #######################################################################################################################
-# OpenCL - only compile OpenCL when CUDA is not picked
+# OpenCL - only compile OpenCL when HIP is not picked
 find_package(OpenCL)
 if (NOT OPENCL_FOUND)
   message("-- OpenCL not found. Compiling WITHOUT OpenCL support.")
 else()
-  if (NOT SUPPORT_CUDA)
+	if (NOT SUPPORT_HIP)
     option(SUPPORT_OCL "Compile WITH OpenCL support." ON)
     if (SUPPORT_OCL)
       set(OCL_CXX_FLAGS -DSUPPORT_OCL)
       include_directories(${OPENCL_INCLUDE_DIRS})
     endif()
   else()
-    message("-- OpenCL not supported while CUDA is enabled.")
+    message("-- OpenCL not supported while HIP is enabled.")
   endif()
 endif()
 
 #######################################################################################################################
-# MIC - only compile MIC when CUDA and OpenCL is not picked
-if (NOT SUPPORT_CUDA)
+# MIC - only compile MIC when HIP and OpenCL is not picked
+if (NOT SUPPORT_HIP)
   if (NOT SUPPORT_OCL)
     # Check for Intel Compiler
     find_program(CMAKE_C_COMPILER NAMES icc)
@@ -149,7 +154,7 @@ if (NOT SUPPORT_CUDA)
     message("-- MIC not supported while OpenCL is enabled.")
   endif()
 else()
-  message("-- MIC not supported while CUDA is enabled.")
+    message("-- MIC not supported while HIP is enabled.")
 endif()
 
 #######################################################################################################################
@@ -193,8 +198,7 @@ endif()
 option(BUILD_EXAMPLES "Build examples." ON)
 
 #######################################################################################################################
-
-set(CMAKE_CXX_FLAGS "${CXX_FLAGS} ${OMP_CXX_FLAGS} ${CUDA_CXX_FLAGS} ${OCL_CXX_FLAGS} ${MKL_CXX_FLAGS} ${MIC_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CXX_FLAGS} ${OMP_CXX_FLAGS} ${HIP_CXX_FLAGS} ${OCL_CXX_FLAGS} ${MKL_CXX_FLAGS} ${MIC_CXX_FLAGS}")
 
 add_subdirectory(src)
 if (BUILD_EXAMPLES)
