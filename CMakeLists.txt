@@ -30,9 +30,13 @@
 
 # PARALUTION version 1.1.0 
 
-
 cmake_minimum_required(VERSION 2.8)
 project(PARALUTION)
+
+SET(CMAKE_BUILD_TYPE "debug")
+SET(GCC_DEBUG_FLAGS "-g")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_DEBUG_FLAGS}")
+
 
 #######################################################################################################################
 
@@ -105,7 +109,7 @@ if(NOT DEFINED HIP_PATH)
     if(NOT DEFINED ENV{HIP_PATH})
         set(HIP_PATH "/opt/rocm/hip" CACHE PATH "Path to which HIP has been installed")
         #set(HIP_FLAGS "${HIP_FLAGS} -O3 -arch amd-gpu-target=gfx906  --compiler-options -Wall")
-        set(HIP_HCC_FLAGS "${HIP_HCC_FLAGS} -O3 -arch amd-gpu-target=gfx906  -fno-gpu-rdc --compiler-options -Wall")
+        set(HIP_HCC_FLAGS "${HIP_HCC_FLAGS} -O3 -g -arch amd-gpu-target=gfx906  -fno-gpu-rdc --compiler-options -Wall")
         option(SUPPORT_HIP "Compile WITH HIP support." ON)
         set(HIP_PATH $ENV{HIP_PATH} CACHE PATH "Path to which HIP has been installed")
         set(HIP_CXX_FLAGS -DSUPPORT_HIP)

@@ -30,6 +30,8 @@
 
 # PARALUTION version 1.1.0 
 
+SET(GCC_DEBUG_FLAGS "-g")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GCC_DEBUG_FLAGS}")
 
 set(PARALUTION_SOURCES)
 set(PARALUTION_PUBLIC_HEADERS
@@ -91,7 +93,7 @@ if (SUPPORT_HIP)
   foreach(i ${PARALUTION_SOURCES})
 
     if (${i} MATCHES ".cu")
-    execute_process(COMMAND /opt/rocm/bin/hipcc -c -fPIC -fno-gpu-rdc -DSUPPORT_HIP  ${path1}/${i} -o  ${path1}/${i}.o )
+    execute_process(COMMAND /opt/rocm/bin/hipcc -c -g -fPIC -fno-gpu-rdc -DSUPPORT_HIP  ${path1}/${i} -o  ${path1}/${i}.o )
     list(REMOVE_ITEM PARALUTION_SOURCES ${path1}/${i})
     list(APPEND PARALUTION_SOURCES ${path1}/${i}.o)
 
